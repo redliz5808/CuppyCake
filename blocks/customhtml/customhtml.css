@@ -1,0 +1,35 @@
+.homepage-banner div div {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.homepage-banner .banner-text {
+    flex-direction: column;
+}
+
+.homepage-banner .large-text {
+    font-size: 3rem;
+    font-weight: 600;
+    color: rebeccapurple;
+}
+
+.homepage-banner .primary-btn {
+    background-color: rebeccapurple;
+    color: #FFF;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+}
+
+.homepage-banner .primary-text {
+    color: rebeccapurple;
+}
+
+.homepage-banner .banner-image {
+    background-image: url("https://images.pexels.com/photos/4580745/pexels-photo-4580745.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
