@@ -1,1 +1,43 @@
 /* stylelint-disable no-empty-source */
+.fragment-container .homepage-banner {
+    background-image: url("https://images.pexels.com/photos/1857157/pexels-photo-1857157.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 5rem;
+}
+
+.fragment-container .homepage-banner div:first-child p {
+    font-size: 2.25rem;
+    max-width: 29.38rem;
+    backdrop-filter: blur(10px);
+}
+
+.fragment-container .homepage-banner div:nth-child(2) p {
+    font-size: 1.13rem;
+    max-width: 29.38rem;
+    backdrop-filter: blur(10px);
+}
+
+.fragment-container .homepage-banner div:nth-child(3) p {
+    font-size: 1rem;
+    max-width: 29.38rem;
+    backdrop-filter: blur(10px);
+}
+
+.fragment-container .homepage-banner div:nth-child(4) p {
+    font-size: 1.13rem;
+    max-width: 29.38rem;
+    backdrop-filter: blur(10px);
+}
+
+.fragment-container .homepage-banner div:nth-child(4) img {
+    max-height: 0.88rem;
+    margin-left: 0.5rem;
+}
