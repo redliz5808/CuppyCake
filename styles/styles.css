@@ -86,6 +86,7 @@ body {
   font-family: var(--primary-family);
   font-size: 1rem;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 body.appear {
@@ -156,7 +157,7 @@ button {
 
 /* links */
 a:any-link {
-  color: var(--menu-font);
+  color: var(--nav-background);
   text-decoration: none;
   word-break: break-word;
 }
@@ -182,8 +183,8 @@ button {
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--menu-font);
-  color: var(--background-primary);
+  background-color: var(--primary);
+  color: var(--primary-contrast);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -230,13 +231,13 @@ main img {
 
 /* sections */
 main > .section {
-  margin: 40px 0;
+  margin: 0;
 }
 
 main > .section > div {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: auto;
-  padding: 0 24px;
+  padding: 0;
 }
 
 main > .section:first-of-type {
@@ -245,7 +246,7 @@ main > .section:first-of-type {
 
 @media (width >= 900px) {
   main > .section > div {
-    padding: 0 32px;
+    padding: 0;
   }
 }
 
