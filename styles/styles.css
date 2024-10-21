@@ -10,34 +10,59 @@
  * governing permissions and limitations under the License.
  */
 
-:root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
 
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+ :root {
+  --static-light: #fff;
 
-  /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  --nav-background: #101042;
+  --nav-border: #23235c;
+  --nav-text: #dcdbff;
+  --nav-text-active: #fff;
 
-  /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  --primary: #7f1a88;
+  --primary-hover: #a540ae;
+  --primary-contrast: #fff;
 
-  /* nav height */
-  --nav-height: 64px;
+  --secondary: #3d3aba;
+  --secondary-hover: #6360e0;
+  --secondary-contrast: #fff;
+
+  --accent: var(--nav-text);
+  --accent-hover: #8f8ee8;
+  --accent-contrast: #000;
+  --accent-alpha: rgba(143, 142, 232, 0.35);
+
+  --background-primary: #fff;
+  --background-light: #bdbdbd;
+  --background-dark: var(--nav-background);
+  --background-announcement: #e5f1ff;
+
+  --primary-family: "Montserrat", sans-serif;
+  --secondary-family: Verdana, sans-serif;
+  --announcement-family: "Fjalla One", sans-serif;
+
+  --primary-font: #2d2d32;
+  --secondary-font: #878787;
+  --dark-font: #000;
+  --menu-font: #9ba9b9;
+  --announcement-heading: #0b56a3;
+  --announcement-light: #5996ff;
+
+  --primary-radius: 5px;
+  --secondary-radius: 10px;
+  --overlay: rgba(0, 0, 0, 0.05);
+  --primary-gradient: linear-gradient(
+      135deg,
+      rgba(22, 19, 86, 1) 0%,
+      rgba(16, 16, 69, 1) 29%,
+      rgba(127, 26, 136, 1) 84%
+  );
+
+  --header-banner: url("https://grythome.s3.us-east-1.amazonaws.com/media/dsvjdhsz/banner1440x512_community.png");
+  --header-banner-mobile: url("https://grythome.s3.us-east-1.amazonaws.com/media/uo2d2iej/new.png");
+  --recommended-header: url("https://grythome.s3.us-east-1.amazonaws.com/media/0lvgeeqy/banner_recommended.png");
+  --quote-background: url("https://grythome.s3.us-east-1.amazonaws.com/media/dv3h4dr1/quotepanelbackground-1.png");
+  --quote-background-mobile: url("https://grythome.s3.us-east-1.amazonaws.com/media/1wplyl1s/quotepanelbackground1mobile.png");
 }
 
 /* fallback fonts */
@@ -53,39 +78,18 @@
   src: local('Arial');
 }
 
-@media (width >= 900px) {
-  :root {
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
-
-    /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
-  }
-}
-
 body {
   display: none;
   margin: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
+  background-color: var(--background-primary);
+  color: var(--primary-font);
+  font-family: var(--primary-family);
+  font-size: 1rem;
   line-height: 1.6;
 }
 
 body.appear {
   display: block;
-}
-
-header {
-  height: var(--nav-height);
 }
 
 header .header,
@@ -104,20 +108,17 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
-  font-family: var(--heading-font-family);
+  font-family: var(--secondary-family);
   font-weight: 600;
-  line-height: 1.25;
   scroll-margin: 40px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.15rem; }
+h6 { font-size: 1rem; }
 
 p,
 dl,
@@ -131,13 +132,13 @@ blockquote {
 
 code,
 pre {
-  font-size: var(--body-font-size-s);
+  font-size: 0.88rem;
 }
 
 pre {
   padding: 16px;
   border-radius: 8px;
-  background-color: var(--light-color);
+  background-color: var(--background-light);
   overflow-x: auto;
   white-space: pre;
 }
@@ -155,13 +156,13 @@ button {
 
 /* links */
 a:any-link {
-  color: var(--link-color);
+  color: var(--menu-font);
   text-decoration: none;
   word-break: break-word;
 }
 
 a:hover {
-  color: var(--link-hover-color);
+  color: var(--primary-font);
   text-decoration: underline;
 }
 
@@ -175,14 +176,14 @@ button {
   border: 2px solid transparent;
   border-radius: 2.4em;
   padding: 0.5em 1.2em;
-  font-family: var(--body-font-family);
+  font-family: var(--primary-family);
   font-style: normal;
   font-weight: 500;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
+  background-color: var(--menu-font);
+  color: var(--background-primary);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -193,13 +194,13 @@ a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background-color: var(--primary-font);
   cursor: pointer;
 }
 
 button:disabled,
 button:disabled:hover {
-  background-color: var(--light-color);
+  background-color: var(--background-light);
   cursor: unset;
 }
 
@@ -207,7 +208,7 @@ a.button.secondary,
 button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
-  color: var(--text-color);
+  color: var(--primary-font);
 }
 
 main img {
@@ -251,7 +252,7 @@ main > .section:first-of-type {
 /* section metadata */
 main .section.light,
 main .section.highlight {
-  background-color: var(--light-color);
+  background-color: var(--background-light);
   margin: 0;
   padding: 40px 0;
 }
