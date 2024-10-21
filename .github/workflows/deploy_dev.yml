@@ -31,11 +31,11 @@ jobs:
         with:
           os: ${{ matrix.os }}
           command: oauth_sts
-          CLIENTID: {{process.env.PROD_CLIENTID}}
-          CLIENTSECRET: {{process.env.PROD_CLIENTSECRET}}
-          TECHNICALACCOUNTID: {{process.env.PROD_TECHNICALACCOUNTID}}
-          TECHNICALACCOUNTEMAIL: {{process.env.PROD_TECHNICALACCOUNTEMAIL}}
-          IMSORGID: {{process.env.PROD_IMSORGID}}
+          CLIENTID: {{process.env.DEV_CLIENTID}}
+          CLIENTSECRET: {{process.env.DEV_CLIENTSECRET}}
+          TECHNICALACCOUNTID: {{process.env.DEV_TECHNICALACCOUNTID}}
+          TECHNICALACCOUNTEMAIL: {{process.env.DEV_TECHNICALACCOUNTEMAIL}}
+          IMSORGID: {{process.env.DEV_IMSORGID}}
           SCOPES: AdobeID, openid, read_organizations, additional_info.projectedProductContext, additional_info.roles, adobeio_api, read_client_secret, manage_client_secrets
       - name: Build
         env:
