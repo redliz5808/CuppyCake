@@ -32,12 +32,12 @@ jobs:
         with:
           os: ${{ matrix.os }}
           command: oauth_sts
-          CLIENTID: ${{ secrets.CLIENTID_STAGE }}
-          CLIENTSECRET: ${{ secrets.CLIENTSECRET_STAGE }}
-          TECHNICALACCOUNTID: ${{ secrets.TECHNICALACCID_STAGE }}
-          TECHNICALACCOUNTEMAIL: ${{ secrets.TECHNICALACCEMAIL_STAGE }}
-          IMSORGID: ${{ secrets.IMSORGID_STAGE }}
-          SCOPES: ${{ secrets.SCOPES_STAGE }}
+          CLIENTID: {{process.env.STAGE_CLIENTID}}
+          CLIENTSECRET: {{process.env.STAGE_CLIENTSECRET}}
+          TECHNICALACCOUNTID: {{process.env.STAGE_TECHNICALACCOUNTID}}
+          TECHNICALACCOUNTEMAIL: {{process.env.STAGE_TECHNICALACCOUNTEMAIL}}
+          IMSORGID: {{process.env.STAGE_IMSORGID}}
+          SCOPES: AdobeID, openid, read_organizations, additional_info.projectedProductContext, additional_info.roles, adobeio_api, read_client_secret, manage_client_secrets
       - name: Build
         env:
           AIO_RUNTIME_NAMESPACE: ${{ secrets.AIO_RUNTIME_NAMESPACE_STAGE }}
