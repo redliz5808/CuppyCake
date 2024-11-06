@@ -9,7 +9,9 @@ import ReactDOM from 'react-dom'
 import Runtime, { init } from '@adobe/exc-app'
 
 import App from './components/App'
+import { GBanner } from './components/Banner'
 import './index.css'
+
 
 window.React = require('react')
 /* Here you can bootstrap your application and configure the integration with the Adobe Experience Cloud Shell */
@@ -71,3 +73,5 @@ function bootstrapInExcShell () {
   }
   runtime.title = '987TaupeYak'
 }
+
+export const GBanner = GBanner;
